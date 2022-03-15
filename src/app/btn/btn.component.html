@@ -3,11 +3,11 @@
       <h1>To-do-list</h1>
     </mat-card-title>
       <div class="title">
-        <input matInt type="text" [(ngModel)]="Lista" (click)="Storage()" (keyup.enter)="AdicionarLista()">
-        <button id="btn1"  (click)="AdicionarLista()"appStyleBtn  >+</button>
+        <input matInt type="text" [(ngModel)]="Lista"   (keyup.enter)="AdicionarLista()">
+        <button id="btn1" (click)="recuperarstorage()"  (click)="AdicionarLista()"appStyleBtn   >+</button>
       </div>
         <mat-card-content>
-          <ul id="lista"  *ngFor="let Itens of ItensLista"  >
+          <ul id="lista"  *ngFor="let Itens of ItensLista" (mouseover)='recuperarstorage()' >
           <li > {{Itens}} </li>
           <button id="btn2" mat-mini-fab color='warn' (click)="RemoverLista(Itens)">X</button>
           </ul>
