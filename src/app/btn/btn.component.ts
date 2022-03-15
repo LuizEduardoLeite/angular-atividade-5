@@ -20,21 +20,13 @@ export class BtnComponent {
     
     let storage1 = localStorage.getItem('ItensLista')
     let arr1 = JSON.parse(storage1 || '[]')
-    this.ItensLista = arr1
-    
+    this.ItensLista = arr1    
   }
   recuperarstorage():void{
     let storage1 = localStorage.getItem('ItensLista')
     let arr1 = JSON.parse(storage1 || '')
     this.ItensLista = arr1
-    //this.Storage = localStorage.getItem('dado')
-
   }
-  
- 
- 
-
-  
   @Output()
   clicou2:EventEmitter<any> = new EventEmitter<any>()
   Clear(){
