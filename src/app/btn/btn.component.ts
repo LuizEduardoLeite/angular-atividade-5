@@ -16,8 +16,12 @@ export class BtnComponent {
     this.Lista = ""
   }
  
-
-  
+  Storage(){
+    
+    localStorage.setItem('ItensLista', JSON.stringify(this.ItensLista))
+    let Stor = localStorage.getItem('Lista')
+    console.log('Local Storage:'+Stor)
+  }
 
   
   @Output()
