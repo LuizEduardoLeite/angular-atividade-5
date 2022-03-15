@@ -10,23 +10,29 @@ export class BtnComponent {
   ItensLista = [""];
   Lista="";
   
-  @Output()
+  
   AdicionarLista(): void{
     this.ItensLista.push(this.Lista);
     this.Lista = ""
   }
  
 
-  RemoverLista(Itens:string){
-    this.ItensLista.splice(this.ItensLista.indexOf(Itens),1)
-
-  }
   
-  Clear(Itens:string){
+
+  
+  @Output()
+  clicou2:EventEmitter<any> = new EventEmitter<any>()
+  Clear(){
     this.ItensLista.splice(this.Lista.length)
+    this.clicou2.emit()
+  }
+  @Output()
+  clicou1:EventEmitter<string> = new EventEmitter<string>()
+  RemoverLista(Itens:string){
+      this.ItensLista.splice(this.ItensLista.indexOf(Itens),1)
+      this.clicou1.emit()
+    }
   }
 
-
-}
 
 
